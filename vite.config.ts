@@ -25,9 +25,12 @@ export default defineConfig(({ mode }) => ({
     assetsDir: 'assets',
     emptyOutDir: true,
     target: 'esnext',
-    // Generates a static build
-    ssrManifest: true,
+    // ssrManifest is not needed for a static CSR build
+    // ssrManifest: true, 
     rollupOptions: {
+      input: {
+        app: path.resolve(__dirname, 'index.html'),
+      },
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
