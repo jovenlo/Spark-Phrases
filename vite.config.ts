@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // Configure for client-side routing (e.g., HashRouter) under a subpath.
   base: "/Spark-Phrases/",
   server: {
     host: "localhost",
@@ -26,7 +27,7 @@ export default defineConfig(({ mode }) => ({
     emptyOutDir: true,
     target: 'esnext',
     // ssrManifest is not needed for a static CSR build
-    // ssrManifest: true, 
+    // ssrManifest: true,
     rollupOptions: {
       input: {
         app: path.resolve(__dirname, 'index.html'),
